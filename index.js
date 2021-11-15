@@ -112,6 +112,7 @@ async function run() {
         });
 
         // GET API buyer
+        // buyer
         app.get('/buyer', async (req, res) => {
             const cursor = buyerCollection.find({});
             const user = await cursor.toArray();
