@@ -118,7 +118,7 @@ async function run() {
             const user = buyerCollection.find({});
             const getUser = await user.toArray();
             console.log(getUser);
-            res.send(getUser);
+            res.json(getUser);
         });
 
 
