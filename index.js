@@ -55,6 +55,19 @@ async function run() {
             res.json(result)
         });
 
+
+
+        //  delete services  manage all products
+        app.delete('/services/:id', async (req, res) => {
+            const id = req.params.id;
+            const query = { _id: ObjectId(id) };
+            const result = await servicesCollection.deleteOne(query);
+            console.log(result);
+
+            res.json(result);
+        })
+
+
         // POST API users 
         app.post('/users', async (req, res) => {
             const user = req.body;
@@ -118,7 +131,7 @@ async function run() {
             const user = buyerCollection.find({});
             const getUser = await user.toArray();
             console.log(getUser);
-            res.json(getUser);
+            res.send(getUser);
         });
 
 
